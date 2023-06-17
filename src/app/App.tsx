@@ -3,8 +3,9 @@ import React from 'react';
 import './styles/index.scss'
 import {classNames} from "shared/lib/classNames/lib/classNames";
 import {AppRouter} from "app/providers/router";
-import {NavBar} from "widgets/NavBar";
+import {NavBar} from "widgets/Navbar";
 import {useTheme} from "app/providers/ThemeProvider";
+import {Sidebar} from "widgets/Sidebar";
 
 const App = () => {
 
@@ -14,7 +15,10 @@ const App = () => {
         <div className={classNames('app', [theme])}>
             <NavBar />
 
-            <AppRouter />
+            <div className={'layout'}>
+                <Sidebar />
+                <AppRouter />
+            </div>
         </div>
     );
 };
