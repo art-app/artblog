@@ -4,5 +4,8 @@
   "lang": "Русский",
   "Main": "Главная",
   "About": "Информация",
-  "Page not found": "Страница не найдена"
+  "Page not found": "Страница не найдена",
+  "an unexpected error occurred": "произошла непредвиденная ошибка",
+  "reload page": "перезагрузить страницу",
+  "throw error": "throw error"
 }

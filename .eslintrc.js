@@ -38,10 +38,16 @@ module.exports = {
         'react/react-in-jsx-scope': 'off',
         'no-shadow': 'off',
         'import/extensions': 'off',
-        'import/no-extraneous-dependencies': 'warn',
+        'import/no-extraneous-dependencies': 'off',
         'no-underscore-dangle': 'warn',
         'i18next/no-literal-string': [2, { markupOnly: true }],
-        'max-len': [2, { ignoreComments: true }],
+        'max-len': [2, {
+            tabWidth: 4,
+            ignoreComments: true,
+            ignoreUrls: true,
+            ignoreStrings: true,
+            ignoreTemplateLiterals: true,
+        }],
     },
     globals: {
         __IS_DEV__: true,
