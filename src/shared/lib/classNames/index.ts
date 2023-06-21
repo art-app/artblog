@@ -1,1 +1,1 @@
-export { classNames } from 'shared/lib/classNames/lib/classNames';
+export { classNames } from './lib/classNames';
