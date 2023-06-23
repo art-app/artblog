@@ -22,9 +22,6 @@ export function buildPlugins(
         new webpack.DefinePlugin({
             __IS_DEV__: JSON.stringify(isDev),
         }),
-        new BundleAnalyzerPlugin({
-            openAnalyser: false,
-        }),
     ];
 
     if (isDev) {
@@ -32,6 +29,9 @@ export function buildPlugins(
         plugins.push(new ReactRefreshPlugin(
             { overlay: false },
         ));
+        plugins.push(new BundleAnalyzerPlugin({
+            openAnalyser: false,
+        }));
     }
 
     return plugins;
