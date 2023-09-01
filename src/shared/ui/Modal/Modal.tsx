@@ -1,10 +1,8 @@
 import React, {
-    FC, ReactNode, useCallback, useEffect, useRef, useState,
+    FC, ReactNode, useCallback, useEffect,
 } from 'react';
 import { classNames } from 'shared/lib/classNames';
 import { Portal } from 'shared/ui/Portal/Portal';
-import theme from '@storybook/addon-interactions/dist/ts3.9/theme';
-import { useTheme } from 'app/providers/ThemeProvider';
 import cls from './Modal.module.scss';
 
 interface ModalProps {
