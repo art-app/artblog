@@ -1,6 +1,4 @@
 import React, { Suspense } from 'react';
-
-import './styles/index.scss';
 import { classNames } from 'shared/lib/classNames/lib/classNames';
 import { AppRouter } from 'app/providers/router';
 import { NavBar } from 'widgets/Navbar';

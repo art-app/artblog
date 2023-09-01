@@ -8,5 +8,6 @@
   "an unexpected error occurred": "произошла непредвиденная ошибка",
   "reload page": "перезагрузить страницу",
   "throw error": "throw error",
-  "short lang": "Ру"
+  "short lang": "Ру",
+  "login": "войти"
 }
