@@ -3,7 +3,7 @@
     width: var(--sidebar-width);
     background: var(--bg-color-additional);
     position: relative;
-    transition: .1s;
+    transition: 0.1s;
 }
 
 .switchers {
@@ -34,7 +34,7 @@
 .item {
     display: flex;
     align-items: center;
-    gap: 10px
+    gap: 10px;
 }
 
 .icon {
@@ -44,7 +44,6 @@
 .link {
     color: var(--inverted-primary-color);
 }
-
 
 .collapsed {
     width: var(--sidebar-width-collapsed);
