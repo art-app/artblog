@@ -1,0 +1,20 @@
+.Input {
+    display: block;
+}
+
+.input {
+    width: 100%;
+    outline: none;
+    border-radius: 5px;
+    border: var(--primary-color);
+    padding: 4px;
+    text-indent: 7px;
+
+    &:focus {
+        outline: none;
+    }
+}
+
+.label {
+    font-size: var(--font-size-m);
+}

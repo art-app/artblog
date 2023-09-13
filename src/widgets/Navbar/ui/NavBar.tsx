@@ -1,19 +1,23 @@
 import React, { FC, useCallback, useState } from 'react';
 import { classNames } from 'shared/lib/classNames';
 import { useTranslation } from 'react-i18next';
-import { Modal } from 'shared/ui/Modal/Modal';
 import { Button, ButtonSize, ButtonTheme } from 'shared/ui/Button/Button';
+import { LoginModal } from 'features/AuthByUsername';
 import cls from './NavBar.module.scss';
 
 interface NavBarProps {
     className?: string
 }
 export const NavBar:FC<NavBarProps> = ({ className }) => {
-    const [open, setOpen] = useState(false);
+    const [isAuthNodal, setIsAuthNodal] = useState(false);
     const { t } = useTranslation();
 
-    const onToggleModal = useCallback(() => {
-        setOpen((prevState) => !prevState);
+    const onCloseModal = useCallback(() => {
+        setIsAuthNodal(false);
+    }, []);
+
+    const onShowModal = useCallback(() => {
+        setIsAuthNodal(true);
     }, []);
 
     return (
@@ -22,16 +26,12 @@ export const NavBar:FC<NavBarProps> = ({ className }) => {
                 theme={ButtonTheme.LINK_INVERTED}
                 size={ButtonSize.M}
                 className={cls.links}
-                onClick={onToggleModal}
+                onClick={onShowModal}
             >
                 {t('login')}
             </Button>
 
-            <Modal isOpen={open} onClose={onToggleModal}>
-                <span>
-                    {t('We are formalizing our plans to enter AWS SDK for JavaScript')}
-                </span>
-            </Modal>
+            <LoginModal isOpen={isAuthNodal} onClose={onCloseModal} />
         </div>
     );
 };
