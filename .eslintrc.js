@@ -42,7 +42,7 @@ module.exports = {
             ignoreAttribute: ['data-testid', 'fill'],
         }],
         'max-len': [2, {
-            code: 100,
+            code: 110,
             tabWidth: 4,
             ignoreComments: true,
             ignoreUrls: true,

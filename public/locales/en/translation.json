@@ -10,5 +10,12 @@
   "throw error": "throw error",
   "short lang": "En",
   "login": "login",
-  "Войти": "To come in"
+  "Войти": "to come in",
+  "Авторизация": "Authorization",
+  "Неверный логин или пароль": "Wrong login or password",
+  "пароль": "password",
+  "логин": "username",
+  "введите пароль": "enter password",
+  "введите логин": "enter username",
+  "выйти": "выйти"
 }

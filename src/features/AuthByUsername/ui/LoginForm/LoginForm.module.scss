@@ -5,6 +5,9 @@
     width: 400px;
 }
 
-.loginBtn {
-    margin-right: auto;
+.flex {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin-top: 10px;
 }
