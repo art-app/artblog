@@ -16,6 +16,7 @@ export default {
     // cacheDirectory: "/private/var/folders/9q/1s2m5dnn59z6gkwhnmhzg7mw0000gn/T/jest_dx",
     globals: {
         __IS_DEV__: true,
+        __API__: '',
     },
 
     // Automatically clear mock calls, instances, contexts and results before every test
