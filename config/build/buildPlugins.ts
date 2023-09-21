@@ -30,7 +30,7 @@ export function buildPlugins(
             { overlay: false },
         ));
         plugins.push(new BundleAnalyzerPlugin({
-            openAnalyser: false,
+            openAnalyzer: false,
         }));
     }
 

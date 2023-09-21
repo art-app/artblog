@@ -1,4 +1,4 @@
-import React, { FC, useCallback, useState } from 'react';
+import React, { memo, useCallback, useState } from 'react';
 import { classNames } from 'shared/lib/classNames';
 import { useTranslation } from 'react-i18next';
 import { Button, ButtonSize, ButtonTheme } from 'shared/ui/Button/Button';
@@ -11,7 +11,7 @@ interface NavBarProps {
     className?: string
 }
 
-export const NavBar: FC<NavBarProps> = ({ className }) => {
+export const NavBar = memo(({ className }: NavBarProps) => {
     const [isAuthNodal, setIsAuthNodal] = useState(false);
     const { t } = useTranslation();
 
@@ -60,4 +60,4 @@ export const NavBar: FC<NavBarProps> = ({ className }) => {
             {isAuthNodal && <LoginModal isOpen={isAuthNodal} onClose={onCloseModal} />}
         </div>
     );
-};
+});
