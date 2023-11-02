@@ -28,8 +28,8 @@
   "profile": {
     "first": "Mike",
     "lastname": "White",
-    "age": "23",
-    "currency": "RUB",
+    "age": 24,
+    "currency": "EUR",
     "country": "Russia",
     "city": "SPB",
     "username": "admin",

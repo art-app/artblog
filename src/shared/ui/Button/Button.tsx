@@ -7,6 +7,7 @@ export enum ButtonTheme {
     LINK = 'link',
     LINK_INVERTED = 'linkInverted',
     OUTLINE = 'outline',
+    OUTLINE_WARNING = 'outlineWarning',
     BACKGROUND = 'background',
     BACKGROUND_INVERTED = 'backgroundInverted',
 }

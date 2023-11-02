@@ -1,20 +1,22 @@
 .ProfileCard {
     display: flex;
-    flex-direction: column;
-    gap: 20px;
+    //flex-direction: column;
+    gap: 50px;
     padding: 20px;
-    width: fit-content;
-}
-
-.header {
-    display: flex;
-    align-items: center;
-    gap: 20px;
+    width: 500px;
+    border: 1px solid var(--bg-color-additional);
 }
 
 .data {
     display: flex;
+    flex: 1;
     flex-direction: column;
     gap: 20px;
-    width: 300px;
+}
+
+.loading,
+.error {
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }

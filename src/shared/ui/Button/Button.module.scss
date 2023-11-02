@@ -31,6 +31,12 @@
     padding: 10px;
 }
 
+.outlineWarning {
+    border: 1px solid var(--red-light);
+    color: var(--red-light);
+    padding: 10px;
+}
+
 .background,
 .backgroundInverted {
     background: var(--bg-color);

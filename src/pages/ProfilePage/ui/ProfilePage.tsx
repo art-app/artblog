@@ -1,26 +1,13 @@
-import React, { memo, useEffect } from 'react';
-import { useTranslation } from 'react-i18next';
-import { DynamicModuleLoader, ReducersList } from 'shared/lib/components/DynamicModuleLoader';
-import { fetchProfileData, ProfileCard, profileReducer } from 'entities/Profile';
-import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
+import React, { memo } from 'react';
+import { EditableProfileCard } from 'features/EditableProfileCard';
+import { classNames } from 'shared/lib/classNames';
+import cls from './ProfilePage.module.scss';
 
-const reducers: ReducersList = {
-    profile: profileReducer,
-};
+const ProfilePage = memo(() => (
+    <div className={classNames(cls.ProfilePage, [])}>
+        <EditableProfileCard />
+    </div>
 
-const ProfilePage = memo(() => {
-    const { t } = useTranslation();
-    const dispatch = useAppDispatch();
-
-    useEffect(() => {
-        dispatch(fetchProfileData());
-    }, [dispatch]);
-
-    return (
-        <DynamicModuleLoader reducers={reducers} removeAfterUnmount>
-            <ProfileCard />
-        </DynamicModuleLoader>
-    );
-});
+));
 
 export default ProfilePage;

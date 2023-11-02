@@ -1,0 +1,23 @@
+.Wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    max-width: 300px;
+}
+
+.select {
+    background: none;
+    outline: none;
+    color: var(--primary-color);
+    border: 1px solid var(--primary-color);
+}
+
+.option {
+    color: var(--inverted-primary-color);
+    background: var(--bg-color-additional);
+
+    &:hover {
+        background: var(--bg-color-additional);
+        opacity: 0.9;
+    }
+}
