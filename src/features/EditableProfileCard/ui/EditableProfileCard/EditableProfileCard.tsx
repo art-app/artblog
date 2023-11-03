@@ -7,6 +7,10 @@ import { getProfileForm } from 'features/EditableProfileCard/model/selectors/get
 import { updateProfileData } from 'features/EditableProfileCard/model/services/updateProfileData/updateProfileData';
 import { Currency } from 'entities/Currency/model/types/currency';
 import { Country } from 'entities/Country';
+import { Text, TextTheme } from 'shared/ui/Text/Text';
+import { ValidateProfileError } from 'features/EditableProfileCard/model/types/profileSchema';
+import { useTranslation } from 'react-i18next';
+import { getProfileValidateErrors } from '../../model/selectors/getProfileValidateErrors/getProfileValidateErrors';
 import { getProfileError } from '../../model/selectors/getProfileError/getProfileError';
 import { profileActions, profileReducer } from '../../model/slice/profileSlice';
 import { ProfilePageHeader } from '../ProfilePageHeader/ProfilePageHeader';
@@ -19,12 +23,22 @@ const reducers: ReducersList = {
 };
 
 export const EditableProfileCard = () => {
+    const { t } = useTranslation('profile');
     const dispatch = useAppDispatch();
 
     const formData = useSelector(getProfileForm);
     const isLoading = useSelector(getProfileIsLoading);
     const error = useSelector(getProfileError);
     const readonly = useSelector(getProfileReadonly);
+    const validateErrors = useSelector(getProfileValidateErrors);
+
+    const validateErrorTranslates = {
+        [ValidateProfileError.SERVER_ERROR]: t('Ошибка сервера'),
+        [ValidateProfileError.INCORRECT_COUNTRY]: t('Некорректный регион'),
+        [ValidateProfileError.INCORRECT_USER_DATA]: t('Имя и Фамилия не указаны'),
+        [ValidateProfileError.NO_DATA]: t('Данные не указаны'),
+        [ValidateProfileError.INCORRECT_AGE]: t('Некоректный возраст'),
+    };
 
     useEffect(() => {
         dispatch(fetchProfileData());
@@ -84,6 +98,14 @@ export const EditableProfileCard = () => {
                 onCancelEdit={onCancelEdit}
                 onSave={onSave}
             />
+
+            {validateErrors?.length && validateErrors.map((error) => (
+                <Text
+                    key={error}
+                    theme={TextTheme.ERROR}
+                    text={validateErrorTranslates[error]}
+                />
+            ))}
 
             <ProfileCard
                 data={formData}
