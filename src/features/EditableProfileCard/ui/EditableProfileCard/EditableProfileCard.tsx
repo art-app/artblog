@@ -41,7 +41,9 @@ export const EditableProfileCard = () => {
     };
 
     useEffect(() => {
-        dispatch(fetchProfileData());
+        if (__PROJECT__ !== 'storybook') {
+            dispatch(fetchProfileData());
+        }
     }, [dispatch]);
 
     const onEdit = useCallback(() => {
