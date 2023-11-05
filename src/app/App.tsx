@@ -5,12 +5,14 @@ import { AppRouter }
 import { NavBar } from 'widgets/Navbar';
 import { useTheme } from 'app/providers/ThemeProvider';
 import { Sidebar } from 'widgets/Sidebar';
-import { useDispatch } from 'react-redux';
-import { userActions } from 'entities/User';
+import { useDispatch, useSelector } from 'react-redux';
+import { getUserInitiated, userActions } from 'entities/User';
 
 function App() {
     const { theme } = useTheme();
     const dispatch = useDispatch();
+
+    const initiated = useSelector(getUserInitiated);
 
     document.body.className = theme;
 
@@ -25,7 +27,7 @@ function App() {
 
                 <div className="layout">
                     <Sidebar />
-                    <AppRouter />
+                    {initiated && <AppRouter /> }
                 </div>
             </Suspense>
         </div>
